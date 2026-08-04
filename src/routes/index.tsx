@@ -158,8 +158,43 @@ function Landing() {
         </div>
 
         <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 border-t border-border/60 px-5 py-4 md:px-10">
-          <TechLabel className="text-gold/80">BUILT FOR ITC 2026</TechLabel>
+          <TechLabel className="text-gold/80">
+            DESIGNED EXCLUSIVELY FOR ITC 2026 — EGYPT EDITION
+          </TechLabel>
           <TechLabel>STUDENT TECHNOLOGY PROTOTYPE — NON-OPERATIONAL SIMULATION</TechLabel>
+        </div>
+      </section>
+
+      {/* BUILT FOR ITC — EGYPT EDITION */}
+      <section className="rule-heavy border-b border-border/60 bg-surface/20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.1fr_1fr] md:px-10">
+          <div className="offset-1">
+            <TechLabel className="text-gold/80">PURPOSE-BUILT</TechLabel>
+            <h2 className="mt-4 text-3xl leading-[0.95] md:text-5xl">
+              Designed exclusively
+              <br />
+              for ITC 2026
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              EAGLE EYE was not adapted from a generic dashboard. Every module, dataset and
+              screen in this environment was authored specifically for the ITC 2026 competition
+              brief, then tuned as an Egypt edition: Egyptian geography, Egyptian monitoring
+              zones and Egyptian civil-protection response scenarios.
+            </p>
+          </div>
+          <div className="offset-2 grid gap-px bg-border/40">
+            {[
+              ["ITC 2026", "Purpose-built competition prototype"],
+              ["EGYPT EDITION", "5 national zones — Cairo, New Capital, Alexandria, Suez, Aswan"],
+              ["ARABIC CONTEXT", "Egyptian place names and civil-response framing"],
+              ["DEFENSIVE ONLY", "Emergency response and infrastructure monitoring"],
+            ].map(([k, v]) => (
+              <div key={k} className="bg-background px-5 py-5">
+                <TechLabel className="text-foreground">{k}</TechLabel>
+                <p className="mt-2 text-sm text-muted-foreground">{v}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -167,7 +202,7 @@ function Landing() {
       <section className="border-t border-border/60 bg-surface/30">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-border/40 md:grid-cols-4">
           {[
-            { k: "MONITORED ZONES", v: 5, s: "" },
+            { k: "EGYPTIAN ZONES MONITORED", v: 5, s: "" },
             { k: "SIMULATED NODES", v: 20, s: "" },
             { k: "AI DETECTION ACCURACY", v: 96, s: "%" },
             { k: "RESOURCE READINESS", v: 94, s: "%" },
@@ -181,6 +216,7 @@ function Landing() {
           ))}
         </div>
       </section>
+
 
       {/* MODULES */}
       <section className="mx-auto max-w-6xl px-5 py-24 md:px-10">
