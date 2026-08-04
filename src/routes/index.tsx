@@ -96,20 +96,27 @@ function Landing() {
         </header>
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-16 md:px-10">
-          <SimBadge className="w-fit" />
+          <div className="flex flex-wrap items-center gap-2">
+            <SimBadge className="w-fit" />
+            <span className="label-tech border border-foreground/70 px-3 py-2 text-foreground">
+              EGYPT EDITION · النسخة المصرية
+            </span>
+          </div>
           <h1 className="animate-rise mt-7 font-display text-5xl font-bold leading-[0.95] tracking-[-0.03em] md:text-7xl lg:text-8xl">
             <span className="text-gradient-gold">EAGLE EYE</span>
           </h1>
           <p className="animate-rise mt-4 font-mono text-xs uppercase tracking-[0.4em] text-gold/80 md:text-sm">
-            AI Defense Command &amp; Digital Twin
+            AI Defense Command &amp; Digital Twin — Egypt
           </p>
           <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            A unified intelligence environment for situational awareness, emergency response,
-            infrastructure monitoring and simulation.
+            Designed exclusively for ITC 2026, and modelled end to end on Egypt: the New
+            Administrative Capital, Greater Cairo, Alexandria, the Suez Canal corridor and the
+            Aswan High Dam sector.
           </p>
           <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground/60">
             See the situation. Understand the risk. Respond smarter.
           </p>
+
 
           <div className="animate-rise mt-9 flex flex-wrap items-center gap-3">
             <Link
