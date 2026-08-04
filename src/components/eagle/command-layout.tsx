@@ -266,7 +266,7 @@ export function CommandLayout({ children }: { children: ReactNode }) {
             </span>
             <span className="leading-tight">
               <span className="block text-[11px] text-foreground">Operator 01</span>
-              <TechLabel>CLEARANCE — DEMO</TechLabel>
+              <TechLabel>ITC 2026 · EGYPT EDITION</TechLabel>
             </span>
           </div>
         </div>

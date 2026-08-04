@@ -96,20 +96,27 @@ function Landing() {
         </header>
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-16 md:px-10">
-          <SimBadge className="w-fit" />
+          <div className="flex flex-wrap items-center gap-2">
+            <SimBadge className="w-fit" />
+            <span className="label-tech border border-foreground/70 px-3 py-2 text-foreground">
+              EGYPT EDITION · النسخة المصرية
+            </span>
+          </div>
           <h1 className="animate-rise mt-7 font-display text-5xl font-bold leading-[0.95] tracking-[-0.03em] md:text-7xl lg:text-8xl">
             <span className="text-gradient-gold">EAGLE EYE</span>
           </h1>
           <p className="animate-rise mt-4 font-mono text-xs uppercase tracking-[0.4em] text-gold/80 md:text-sm">
-            AI Defense Command &amp; Digital Twin
+            AI Defense Command &amp; Digital Twin — Egypt
           </p>
           <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            A unified intelligence environment for situational awareness, emergency response,
-            infrastructure monitoring and simulation.
+            Designed exclusively for ITC 2026, and modelled end to end on Egypt: the New
+            Administrative Capital, Greater Cairo, Alexandria, the Suez Canal corridor and the
+            Aswan High Dam sector.
           </p>
           <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground/60">
             See the situation. Understand the risk. Respond smarter.
           </p>
+
 
           <div className="animate-rise mt-9 flex flex-wrap items-center gap-3">
             <Link
@@ -151,8 +158,43 @@ function Landing() {
         </div>
 
         <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 border-t border-border/60 px-5 py-4 md:px-10">
-          <TechLabel className="text-gold/80">BUILT FOR ITC 2026</TechLabel>
+          <TechLabel className="text-gold/80">
+            DESIGNED EXCLUSIVELY FOR ITC 2026 — EGYPT EDITION
+          </TechLabel>
           <TechLabel>STUDENT TECHNOLOGY PROTOTYPE — NON-OPERATIONAL SIMULATION</TechLabel>
+        </div>
+      </section>
+
+      {/* BUILT FOR ITC — EGYPT EDITION */}
+      <section className="rule-heavy border-b border-border/60 bg-surface/20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.1fr_1fr] md:px-10">
+          <div className="offset-1">
+            <TechLabel className="text-gold/80">PURPOSE-BUILT</TechLabel>
+            <h2 className="mt-4 text-3xl leading-[0.95] md:text-5xl">
+              Designed exclusively
+              <br />
+              for ITC 2026
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              EAGLE EYE was not adapted from a generic dashboard. Every module, dataset and
+              screen in this environment was authored specifically for the ITC 2026 competition
+              brief, then tuned as an Egypt edition: Egyptian geography, Egyptian monitoring
+              zones and Egyptian civil-protection response scenarios.
+            </p>
+          </div>
+          <div className="offset-2 grid gap-px bg-border/40">
+            {[
+              ["ITC 2026", "Purpose-built competition prototype"],
+              ["EGYPT EDITION", "5 national zones — Cairo, New Capital, Alexandria, Suez, Aswan"],
+              ["ARABIC CONTEXT", "Egyptian place names and civil-response framing"],
+              ["DEFENSIVE ONLY", "Emergency response and infrastructure monitoring"],
+            ].map(([k, v]) => (
+              <div key={k} className="bg-background px-5 py-5">
+                <TechLabel className="text-foreground">{k}</TechLabel>
+                <p className="mt-2 text-sm text-muted-foreground">{v}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -160,7 +202,7 @@ function Landing() {
       <section className="border-t border-border/60 bg-surface/30">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-border/40 md:grid-cols-4">
           {[
-            { k: "MONITORED ZONES", v: 5, s: "" },
+            { k: "EGYPTIAN ZONES MONITORED", v: 5, s: "" },
             { k: "SIMULATED NODES", v: 20, s: "" },
             { k: "AI DETECTION ACCURACY", v: 96, s: "%" },
             { k: "RESOURCE READINESS", v: 94, s: "%" },
@@ -174,6 +216,7 @@ function Landing() {
           ))}
         </div>
       </section>
+
 
       {/* MODULES */}
       <section className="mx-auto max-w-6xl px-5 py-24 md:px-10">
@@ -220,7 +263,7 @@ function Landing() {
         <span className="font-display text-sm font-bold tracking-[0.25em] text-foreground/80">
           EAGLE EYE
         </span>
-        <TechLabel>ITC 2026 — STUDENT TECHNOLOGY PROTOTYPE</TechLabel>
+        <TechLabel>DESIGNED EXCLUSIVELY FOR ITC 2026 · EGYPT EDITION</TechLabel>
         <Link to="/about" className="label-tech text-gold/80 hover:text-gold">
           ABOUT THE TECHNOLOGY →
         </Link>
