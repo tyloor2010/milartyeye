@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as CommandRouteImport } from './routes/command'
+import { Route as HistoryRouteImport } from './routes/history'
 import { Route as IncidentsRouteImport } from './routes/incidents'
 import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as ReportsRouteImport } from './routes/reports'
@@ -33,6 +34,11 @@ const AnalyticsRoute = AnalyticsRouteImport.update({
 const CommandRoute = CommandRouteImport.update({
   id: '/command',
   path: '/command',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IncidentsRoute = IncidentsRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
   '/command': typeof CommandRoute
+  '/history': typeof HistoryRoute
   '/incidents': typeof IncidentsRoute
   '/logistics': typeof LogisticsRoute
   '/reports': typeof ReportsRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
   '/command': typeof CommandRoute
+  '/history': typeof HistoryRoute
   '/incidents': typeof IncidentsRoute
   '/logistics': typeof LogisticsRoute
   '/reports': typeof ReportsRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
   '/command': typeof CommandRoute
+  '/history': typeof HistoryRoute
   '/incidents': typeof IncidentsRoute
   '/logistics': typeof LogisticsRoute
   '/reports': typeof ReportsRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/analytics'
     | '/command'
+    | '/history'
     | '/incidents'
     | '/logistics'
     | '/reports'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/analytics'
     | '/command'
+    | '/history'
     | '/incidents'
     | '/logistics'
     | '/reports'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/analytics'
     | '/command'
+    | '/history'
     | '/incidents'
     | '/logistics'
     | '/reports'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnalyticsRoute: typeof AnalyticsRoute
   CommandRoute: typeof CommandRoute
+  HistoryRoute: typeof HistoryRoute
   IncidentsRoute: typeof IncidentsRoute
   LogisticsRoute: typeof LogisticsRoute
   ReportsRoute: typeof ReportsRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/command'
       fullPath: '/command'
       preLoaderRoute: typeof CommandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/incidents': {
@@ -239,6 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnalyticsRoute: AnalyticsRoute,
   CommandRoute: CommandRoute,
+  HistoryRoute: HistoryRoute,
   IncidentsRoute: IncidentsRoute,
   LogisticsRoute: LogisticsRoute,
   ReportsRoute: ReportsRoute,
