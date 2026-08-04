@@ -21,6 +21,8 @@ import {
 import { cn } from "@/lib/utils";
 import { useSim } from "@/lib/sim-context";
 import { StatusDot, TechLabel } from "./hud";
+import { ThemeToggle } from "./theme-toggle";
+import { Credits } from "./credits";
 import {
   CommandDialog,
   CommandEmpty,
@@ -154,6 +156,7 @@ function TopBar({ onMenu }: { onMenu: () => void }) {
           <span className="label-tech hidden sm:inline">COMMAND SEARCH</span>
           <kbd className="rounded-xs border border-border/60 px-1 font-mono text-[10px]">/</kbd>
         </button>
+        <ThemeToggle />
         <div className="hidden items-center gap-2 border-l border-border/60 pl-3 lg:flex">
           <TechLabel>TIME</TechLabel>
           <Clock />
@@ -306,7 +309,9 @@ export function CommandLayout({ children }: { children: ReactNode }) {
 
       <div className="flex min-h-screen w-full flex-col lg:pl-60">
         <TopBar onMenu={() => setOpen(true)} />
-        <main className="animate-fade flex-1 pb-20 lg:pb-0">{children}</main>
+        <main className="animate-fade flex-1">{children}</main>
+        <Credits />
+        <div className="h-20 lg:hidden" />
       </div>
 
       {/* Mobile bottom nav */}
