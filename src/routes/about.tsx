@@ -25,6 +25,7 @@ const STACK = [
   ["ANALYTICS", "Recharts time-series over simulated telemetry"],
   ["STATE", "Session-scoped simulation store driving map, logistics, analytics and reports"],
   ["DATA", "100% synthetic demonstration data — no live feeds, no real imagery"],
+  ["EDITION", "Egypt edition — authored specifically for the ITC 2026 brief"],
 ];
 
 function AboutPage() {
@@ -34,7 +35,7 @@ function AboutPage() {
         <PageHeader
           eyebrow="ABOUT"
           title="THE TECHNOLOGY BEHIND EAGLE EYE"
-          description="See the situation. Understand the risk. Respond smarter."
+          description="Designed exclusively for ITC 2026 — Egypt edition."
         />
         <div className="grid gap-4 lg:grid-cols-2">
           <Panel title="MISSION" bodyClassName="p-5">
@@ -65,7 +66,7 @@ function AboutPage() {
             </div>
           ))}
         </Panel>
-        <TechLabel className="text-gold/80">STUDENT TECHNOLOGY PROTOTYPE — ITC 2026</TechLabel>
+        <TechLabel className="text-gold/80">DESIGNED EXCLUSIVELY FOR ITC 2026 — EGYPT EDITION · STUDENT TECHNOLOGY PROTOTYPE</TechLabel>
       </div>
     </CommandLayout>
   );

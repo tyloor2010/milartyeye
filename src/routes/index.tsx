@@ -263,7 +263,7 @@ function Landing() {
         <span className="font-display text-sm font-bold tracking-[0.25em] text-foreground/80">
           EAGLE EYE
         </span>
-        <TechLabel>ITC 2026 — STUDENT TECHNOLOGY PROTOTYPE</TechLabel>
+        <TechLabel>DESIGNED EXCLUSIVELY FOR ITC 2026 · EGYPT EDITION</TechLabel>
         <Link to="/about" className="label-tech text-gold/80 hover:text-gold">
           ABOUT THE TECHNOLOGY →
         </Link>
