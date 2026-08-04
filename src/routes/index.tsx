@@ -3,6 +3,8 @@ import { ArrowRight, Radar, Boxes, Satellite, Brain, ShieldCheck } from "lucide-
 import { EgyptMap } from "@/components/eagle/egypt-map";
 import { SimBadge, StatusDot, TechLabel, Counter } from "@/components/eagle/hud";
 import { INCIDENTS } from "@/lib/eagle-data";
+import { ThemeToggle } from "@/components/eagle/theme-toggle";
+import { Credits } from "@/components/eagle/credits";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -264,10 +266,14 @@ function Landing() {
           EAGLE EYE
         </span>
         <TechLabel>DESIGNED EXCLUSIVELY FOR ITC 2026 · EGYPT EDITION</TechLabel>
-        <Link to="/about" className="label-tech text-gold/80 hover:text-gold">
-          ABOUT THE TECHNOLOGY →
-        </Link>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Link to="/about" className="label-tech text-gold/80 hover:text-gold">
+            ABOUT THE TECHNOLOGY →
+          </Link>
+        </div>
       </footer>
+      <Credits />
     </div>
   );
 }
