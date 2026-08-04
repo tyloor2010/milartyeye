@@ -18,6 +18,7 @@ import { Route as IncidentsRouteImport } from './routes/incidents'
 import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as SatelliteRouteImport } from './routes/satellite'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SimulationRouteImport } from './routes/simulation'
 import { Route as SituationRouteImport } from './routes/situation'
 import { Route as TwinRouteImport } from './routes/twin'
@@ -67,6 +68,11 @@ const SatelliteRoute = SatelliteRouteImport.update({
   path: '/satellite',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SimulationRoute = SimulationRouteImport.update({
   id: '/simulation',
   path: '/simulation',
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/logistics': typeof LogisticsRoute
   '/reports': typeof ReportsRoute
   '/satellite': typeof SatelliteRoute
+  '/settings': typeof SettingsRoute
   '/simulation': typeof SimulationRoute
   '/situation': typeof SituationRoute
   '/twin': typeof TwinRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/logistics': typeof LogisticsRoute
   '/reports': typeof ReportsRoute
   '/satellite': typeof SatelliteRoute
+  '/settings': typeof SettingsRoute
   '/simulation': typeof SimulationRoute
   '/situation': typeof SituationRoute
   '/twin': typeof TwinRoute
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/logistics': typeof LogisticsRoute
   '/reports': typeof ReportsRoute
   '/satellite': typeof SatelliteRoute
+  '/settings': typeof SettingsRoute
   '/simulation': typeof SimulationRoute
   '/situation': typeof SituationRoute
   '/twin': typeof TwinRoute
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/logistics'
     | '/reports'
     | '/satellite'
+    | '/settings'
     | '/simulation'
     | '/situation'
     | '/twin'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/logistics'
     | '/reports'
     | '/satellite'
+    | '/settings'
     | '/simulation'
     | '/situation'
     | '/twin'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/logistics'
     | '/reports'
     | '/satellite'
+    | '/settings'
     | '/simulation'
     | '/situation'
     | '/twin'
@@ -181,6 +193,7 @@ export interface RootRouteChildren {
   LogisticsRoute: typeof LogisticsRoute
   ReportsRoute: typeof ReportsRoute
   SatelliteRoute: typeof SatelliteRoute
+  SettingsRoute: typeof SettingsRoute
   SimulationRoute: typeof SimulationRoute
   SituationRoute: typeof SituationRoute
   TwinRoute: typeof TwinRoute
@@ -251,6 +264,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SatelliteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/simulation': {
       id: '/simulation'
       path: '/simulation'
@@ -285,6 +305,7 @@ const rootRouteChildren: RootRouteChildren = {
   LogisticsRoute: LogisticsRoute,
   ReportsRoute: ReportsRoute,
   SatelliteRoute: SatelliteRoute,
+  SettingsRoute: SettingsRoute,
   SimulationRoute: SimulationRoute,
   SituationRoute: SituationRoute,
   TwinRoute: TwinRoute,
